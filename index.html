@@ -25,16 +25,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="#" data-page="home">Recommended</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#romania">Romania</a>
+            <a class="nav-link" href="#" data-page="browse">Browse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#international">International</a>
+            <a class="nav-link" href="#" data-page="recent">Recently Played</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#favorites">Favorites</a>
+            <a class="nav-link" href="#" data-page="favorites">Your Favorites</a>
           </li>
         </ul>
         <form class="d-flex ms-auto">
@@ -51,350 +51,422 @@
 
   <!-- Main content -->
   <div class="main-container">
-    <!-- Recently played -->
-    <div class="spotify-playlists" id="recently-played">
-      <h2>Recently Played</h2>
-      <div class="list recently-played-list row">
-        <!-- Will be populated by JavaScript -->
-      </div>
-    </div>
-
-    <!-- Favorites section -->
-    <div class="spotify-playlists" id="favorites">
-      <h2>Your Favorites</h2>
-      <div class="list favorites-list row">
-        <!-- Will be populated by JavaScript -->
-        <div class="empty-favorites">
-          <i class="fas fa-heart"></i>
-          <p>Add stations to your favorites by clicking the heart icon</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Romania section -->
-    <div class="spotify-playlists" id="romania">
-      <h2>Romania</h2>
-      <div class="list row">
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/onefm-logo.jpg" alt="One FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://live.onefm.ro/onefm.aacp" data-name="One FM" data-img="./images/onefm-logo.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>One FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="One FM" data-src="https://live.onefm.ro/onefm.aacp" data-img="./images/onefm-logo.jpg">
-                  <i class="far fa-heart"></i>
+    <!-- Home page -->
+    <div class="page-content" id="home-page">
+      <div class="spotify-playlists" id="romania">
+        <h2>Romania</h2>
+        <div class="list row">
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/onefm-logo.jpg" alt="One FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://live.onefm.ro/onefm.aacp" data-name="One FM" data-img="./images/onefm-logo.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>One FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="One FM" data-src="https://live.onefm.ro/onefm.aacp" data-img="./images/onefm-logo.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/KissFM.jpg" alt="Kiss FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://live.kissfm.ro/kissfm.aacp" data-name="Kiss FM" data-img="./images/KissFM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Kiss FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Kiss FM" data-src="https://live.kissfm.ro/kissfm.aacp" data-img="./images/KissFM.jpg">
-                  <i class="far fa-heart"></i>
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/KissFM.jpg" alt="Kiss FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://live.kissfm.ro/kissfm.aacp" data-name="Kiss FM" data-img="./images/KissFM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Kiss FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Kiss FM" data-src="https://live.kissfm.ro/kissfm.aacp" data-img="./images/KissFM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Continue with other Romanian stations in the same format -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Magic FM.jpg" alt="Magic FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://live.magicfm.ro/magicfm.aacp" data-name="Magic FM" data-img="./images/Magic FM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Magic FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Magic FM" data-src="https://live.magicfm.ro/magicfm.aacp" data-img="./images/Magic FM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Continue with other Romanian stations in the same format -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Magic FM.jpg" alt="Magic FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://live.magicfm.ro/magicfm.aacp" data-name="Magic FM" data-img="./images/Magic FM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Magic FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Magic FM" data-src="https://live.magicfm.ro/magicfm.aacp" data-img="./images/Magic FM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Continue with remaining Romanian stations -->
-        <!-- Radio ZU -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Radio Zu.jpg" alt="Radio ZU Logo" />
-            <div class="play">
-              <button class="play-button" data-src="http://zuicast.digitalag.ro:9420/zu" data-name="Radio ZU" data-img="./images/Radio Zu.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Radio ZU</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Radio ZU" data-src="http://zuicast.digitalag.ro:9420/zu" data-img="./images/Radio Zu.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Continue with remaining Romanian stations -->
+          <!-- Radio ZU -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Radio Zu.jpg" alt="Radio ZU Logo" />
+              <div class="play">
+                <button class="play-button" data-src="http://zuicast.digitalag.ro:9420/zu" data-name="Radio ZU" data-img="./images/Radio Zu.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Radio ZU</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Radio ZU" data-src="http://zuicast.digitalag.ro:9420/zu" data-img="./images/Radio Zu.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Europa FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Europa FM.jpg" alt="Europa FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://astreaming.edi.ro:8443/EuropaFM_aac" data-name="Europa FM" data-img="./images/Europa FM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Europa FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Europa FM" data-src="https://astreaming.edi.ro:8443/EuropaFM_aac" data-img="./images/Europa FM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Europa FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Europa FM.jpg" alt="Europa FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://astreaming.edi.ro:8443/EuropaFM_aac" data-name="Europa FM" data-img="./images/Europa FM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Europa FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Europa FM" data-src="https://astreaming.edi.ro:8443/EuropaFM_aac" data-img="./images/Europa FM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Virgin Radio -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Virgin Radio.jpg" alt="Virgin Radio Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://astreaming.edi.ro:8443/VirginRadio_aac" data-name="Virgin Radio" data-img="./images/Virgin Radio.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Virgin Radio</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Virgin Radio" data-src="https://astreaming.edi.ro:8443/VirginRadio_aac" data-img="./images/Virgin Radio.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Virgin Radio -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Virgin Radio.jpg" alt="Virgin Radio Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://astreaming.edi.ro:8443/VirginRadio_aac" data-name="Virgin Radio" data-img="./images/Virgin Radio.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Virgin Radio</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Virgin Radio" data-src="https://astreaming.edi.ro:8443/VirginRadio_aac" data-img="./images/Virgin Radio.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Rock FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Rock FM.jpg" alt="Rock FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://live.rockfm.ro/rockfm.aacp" data-name="Rock FM" data-img="./images/Rock FM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Rock FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Rock FM" data-src="https://live.rockfm.ro/rockfm.aacp" data-img="./images/Rock FM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Rock FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Rock FM.jpg" alt="Rock FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://live.rockfm.ro/rockfm.aacp" data-name="Rock FM" data-img="./images/Rock FM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Rock FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Rock FM" data-src="https://live.rockfm.ro/rockfm.aacp" data-img="./images/Rock FM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Dance FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Dance FM.jpg" alt="Dance FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://edge126.rcs-rds.ro/profm/dancefm.mp3" data-name="Dance FM" data-img="./images/Dance FM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Dance FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Dance FM" data-src="https://edge126.rcs-rds.ro/profm/dancefm.mp3" data-img="./images/Dance FM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Dance FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Dance FM.jpg" alt="Dance FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://edge126.rcs-rds.ro/profm/dancefm.mp3" data-name="Dance FM" data-img="./images/Dance FM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Dance FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Dance FM" data-src="https://edge126.rcs-rds.ro/profm/dancefm.mp3" data-img="./images/Dance FM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Radio Cafe -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Radio Cafe.jpg" alt="Radio Cafe Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://live.radiocafe.ro/live.aac" data-name="Radio Cafe" data-img="./images/Radio Cafe.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Radio Cafe</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Radio Cafe" data-src="https://live.radiocafe.ro/live.aac" data-img="./images/Radio Cafe.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Radio Cafe -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Radio Cafe.jpg" alt="Radio Cafe Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://live.radiocafe.ro/live.aac" data-name="Radio Cafe" data-img="./images/Radio Cafe.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Radio Cafe</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Radio Cafe" data-src="https://live.radiocafe.ro/live.aac" data-img="./images/Radio Cafe.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Hit FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Hit FM.jpg" alt="Hit FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://s3.myradiostream.com/4404/listen.mp3" data-name="Hit FM" data-img="./images/Hit FM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Hit FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Hit FM" data-src="https://s3.myradiostream.com/4404/listen.mp3" data-img="./images/Hit FM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Hit FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Hit FM.jpg" alt="Hit FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://s3.myradiostream.com/4404/listen.mp3" data-name="Hit FM" data-img="./images/Hit FM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Hit FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Hit FM" data-src="https://s3.myradiostream.com/4404/listen.mp3" data-img="./images/Hit FM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Big FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/BigFM.jpg" alt="Big FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="http://e15327.cloudrad.io:8000/;?type=http&nocache=122" data-name="Big FM" data-img="./images/BigFM.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Big FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Big FM" data-src="http://e15327.cloudrad.io:8000/;?type=http&nocache=122" data-img="./images/BigFM.jpg">
-                  <i class="far fa-heart"></i>
+          <!-- Big FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/BigFM.jpg" alt="Big FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="http://e15327.cloudrad.io:8000/;?type=http&nocache=122" data-name="Big FM" data-img="./images/BigFM.jpg">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Big FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Big FM" data-src="http://e15327.cloudrad.io:8000/;?type=http&nocache=122" data-img="./images/BigFM.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Mega Hit -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Mega Hit.webp" alt="Mega Hit Logo" />
-            <div class="play">
-              <button class="play-button" data-src="http://live.radiomegahit.eu:8080/;" data-name="Mega Hit" data-img="./images/Mega Hit.webp">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Mega Hit</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Mega Hit" data-src="http://live.radiomegahit.eu:8080/;" data-img="./images/Mega Hit.webp">
-                  <i class="far fa-heart"></i>
+          <!-- Mega Hit -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Mega Hit.webp" alt="Mega Hit Logo" />
+              <div class="play">
+                <button class="play-button" data-src="http://live.radiomegahit.eu:8080/;" data-name="Mega Hit" data-img="./images/Mega Hit.webp">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Mega Hit</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Mega Hit" data-src="http://live.radiomegahit.eu:8080/;" data-img="./images/Mega Hit.webp">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Pro FM -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/ProFM.webp" alt="Pro FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://edge126.rcs-rds.ro/profm/profm.mp3" data-name="Pro FM" data-img="./images/ProFM.webp">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>Pro FM</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Pro FM" data-src="https://edge126.rcs-rds.ro/profm/profm.mp3" data-img="./images/ProFM.webp">
-                  <i class="far fa-heart"></i>
+          <!-- Pro FM -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/ProFM.webp" alt="Pro FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://edge126.rcs-rds.ro/profm/profm.mp3" data-name="Pro FM" data-img="./images/ProFM.webp">
+                  <i class="fa fa-play"></i>
                 </button>
+              </div>
+              <div class="station-info">
+                <h4>Pro FM</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Pro FM" data-src="https://edge126.rcs-rds.ro/profm/profm.mp3" data-img="./images/ProFM.webp">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="spotify-playlists" id="international">
+        <h2>International</h2>
+        <div class="list row">
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/Heart FM.webp" alt="Heart FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://media-ssl.musicradio.com/HeartLondon" data-name="Heart FM London" data-img="./images/Heart FM.webp">
+                  <i class="fa fa-play"></i>
+                </button>
+              </div>
+              <div class="station-info">
+                <h4>Heart FM London</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="Heart FM London" data-src="https://media-ssl.musicradio.com/HeartLondon" data-img="./images/Heart FM.webp">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/OneWorldFm.webp" alt="One World FM Logo" />
+              <div class="play">
+                <button class="play-button" data-src="https://22193.live.streamtheworld.com/OWR_WORLD_RADIO_NL.mp3" data-name="One World Fm" data-img="./images/OneWorldFm.webp">
+                  <i class="fa fa-play"></i>
+                </button>
+              </div>
+              <div class="station-info">
+                <h4>One World Fm</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="One World Fm" data-src="https://22193.live.streamtheworld.com/OWR_WORLD_RADIO_NL.mp3" data-img="./images/OneWorldFm.webp">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more international stations here -->
+          <div class="item">
+            <div class="station-card">
+              <img src="./images/BBC Radio 1.jpg" alt="BBC Radio 1" />
+              <div class="play">
+                <button class="play-button" data-src="https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one" data-name="BBC Radio 1" data-img="./images/BBC Radio 1.jpg">
+                  <i class="fa fa-play"></i>
+                </button>
+              </div>
+              <div class="station-info">
+                <h4>BBC Radio 1</h4>
+                <div class="station-actions">
+                  <button class="favorite-btn" data-station="BBC Radio 1" data-src="https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one" data-img="./images/BBC Radio 1.jpg">
+                    <i class="far fa-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- International section -->
-    <div class="spotify-playlists" id="international">
-      <h2>International</h2>
-      <div class="list row">
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/Heart FM.webp" alt="Heart FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://media-ssl.musicradio.com/HeartLondon" data-name="Heart FM London" data-img="./images/Heart FM.webp">
-                <i class="fa fa-play"></i>
-              </button>
+    <!-- Browse page -->
+    <div class="page-content" id="browse-page" style="display: none;">
+      <div class="browse-container">
+        <!-- Filter sidebar -->
+        <div class="filter-sidebar">
+          <div class="filter-section">
+            <h3>Filters</h3>
+            <div class="filter-group">
+              <label>Country</label>
+              <select id="countryFilter" class="form-select">
+                <option value="">All Countries</option>
+              </select>
             </div>
-            <div class="station-info">
-              <h4>Heart FM London</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="Heart FM London" data-src="https://media-ssl.musicradio.com/HeartLondon" data-img="./images/Heart FM.webp">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
+            <div class="filter-group">
+              <label>Language</label>
+              <select id="languageFilter" class="form-select">
+                <option value="">All Languages</option>
+              </select>
             </div>
+            <div class="filter-group">
+              <label>Genre</label>
+              <select id="genreFilter" class="form-select">
+                <option value="">All Genres</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Bitrate</label>
+              <select id="bitrateFilter" class="form-select">
+                <option value="">All Bitrates</option>
+                <option value="128">128 kbps</option>
+                <option value="192">192 kbps</option>
+                <option value="256">256 kbps</option>
+                <option value="320">320 kbps</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Codec</label>
+              <select id="codecFilter" class="form-select">
+                <option value="">All Codecs</option>
+                <option value="MP3">MP3</option>
+                <option value="AAC">AAC</option>
+                <option value="OGG">OGG</option>
+              </select>
+            </div>
+            <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+            <button id="resetFilters" class="btn btn-secondary">Reset</button>
           </div>
         </div>
 
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/OneWorldFm.webp" alt="One World FM Logo" />
-            <div class="play">
-              <button class="play-button" data-src="https://22193.live.streamtheworld.com/OWR_WORLD_RADIO_NL.mp3" data-name="One World Fm" data-img="./images/OneWorldFm.webp">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>One World Fm</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="One World Fm" data-src="https://22193.live.streamtheworld.com/OWR_WORLD_RADIO_NL.mp3" data-img="./images/OneWorldFm.webp">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
+        <!-- Stations list -->
+        <div class="stations-list">
+          <div class="stations-header">
+            <h2>Browse Stations</h2>
+            <div class="stations-count" id="stationsCount">Loading stations...</div>
+          </div>
+          <div class="list row" id="browseStationsList">
+            <!-- Stations will be populated here -->
+          </div>
+          <div class="loading-spinner" id="browseLoadingSpinner">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Loading...</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Add more international stations here -->
-        <div class="item">
-          <div class="station-card">
-            <img src="./images/BBC Radio 1.jpg" alt="BBC Radio 1" />
-            <div class="play">
-              <button class="play-button" data-src="https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one" data-name="BBC Radio 1" data-img="./images/BBC Radio 1.jpg">
-                <i class="fa fa-play"></i>
-              </button>
-            </div>
-            <div class="station-info">
-              <h4>BBC Radio 1</h4>
-              <div class="station-actions">
-                <button class="favorite-btn" data-station="BBC Radio 1" data-src="https://stream.live.vc.bbcmedia.co.uk/bbc_radio_one" data-img="./images/BBC Radio 1.jpg">
-                  <i class="far fa-heart"></i>
-                </button>
-              </div>
-            </div>
+    <!-- Recently Played page -->
+    <div class="page-content" id="recent-page" style="display: none;">
+      <div class="spotify-playlists">
+        <h2>Recently Played</h2>
+        <div class="list recently-played-list row">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorites page -->
+    <div class="page-content" id="favorites-page" style="display: none;">
+      <div class="spotify-playlists">
+        <h2>Your Favorites</h2>
+        <div class="list favorites-list row">
+          <!-- Will be populated by JavaScript -->
+          <div class="empty-favorites">
+            <i class="fas fa-heart"></i>
+            <p>Add stations to your favorites by clicking the heart icon</p>
           </div>
         </div>
       </div>
@@ -462,5 +534,6 @@
   <script src="ui.js"></script>
   <script src="audio.js"></script>
   <script src="storage.js"></script>
+  <script src="browse.js"></script>
 </body>
 </html>

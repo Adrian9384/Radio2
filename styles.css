@@ -463,3 +463,143 @@ footer {
     width: 14px;
     height: 14px;
 }
+
+/* Page content */
+.page-content {
+    width: 100%;
+    min-height: calc(100vh - var(--footer-height) - 80px);
+    padding: 20px 0;
+}
+
+/* Navigation */
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--spotify-green);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Page transitions */
+.page-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Browse page */
+.browse-container {
+    display: flex;
+    gap: 20px;
+    min-height: calc(100vh - var(--footer-height) - 80px);
+}
+
+.filter-sidebar {
+    width: 280px;
+    background-color: var(--spotify-card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.filter-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group label {
+    color: var(--spotify-light-gray);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.filter-group select {
+    background-color: var(--spotify-dark);
+    border: 1px solid var(--spotify-dark-gray);
+    color: white;
+    width: 100%;
+}
+
+.filter-group select:focus {
+    background-color: var(--spotify-dark);
+    border-color: var(--spotify-green);
+    color: white;
+    box-shadow: none;
+}
+
+#applyFilters, #resetFilters {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#applyFilters {
+    background-color: var(--spotify-green);
+    border: none;
+}
+
+#applyFilters:hover {
+    background-color: #1ed760;
+}
+
+.stations-list {
+    flex: 1;
+    min-width: 0;
+}
+
+.stations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stations-count {
+    color: var(--spotify-light-gray);
+    font-size: 0.9rem;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Responsive adjustments for browse page */
+@media (max-width: 992px) {
+    .browse-container {
+        flex-direction: column;
+    }
+    
+    .filter-sidebar {
+        width: 100%;
+        position: static;
+    }
+}
